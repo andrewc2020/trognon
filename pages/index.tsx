@@ -2,12 +2,12 @@
 import Head from 'next/head'
 
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import {GetServerSideProps } from 'next';
 
 
 
 type Props ={
-  name: string
+  name:string
 }
 
 const Home : React.FunctionComponent<Props> = ({name}) =>(
