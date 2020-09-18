@@ -1,6 +1,6 @@
 ## Trognon
 
-This is a worked example build on Paulin Trognon's Blog article 
+This is a worked example built on Paulin Trognon's Blog article 
 Start a Next.js project with Typescript, Eslint and Prettier April 4, 2020
 
 Her article is a very simple app which listed names passed through a query string, but takes you through the basic set up. 
