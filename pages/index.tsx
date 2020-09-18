@@ -4,6 +4,7 @@ import Head from 'next/head'
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
+import KittenList  from '../components/KittensList';
 
 
 
@@ -12,9 +13,12 @@ type Props = { name : string }
 
 const Home : React.FunctionComponent<Props> = ({ name }) =>(
   <div>
-    <p>
-      HELLO {name}!
-    </p>
+    
+      <div>
+      <KittenList />
+      </div>
+      
+    
   </div>
 )
 

@@ -1,9 +1,11 @@
 ## Trognon
 
-This is a worked example form Paulin Trognon's Blog article 
+This is a worked example build on Paulin Trognon's Blog article 
 Start a Next.js project with Typescript, Eslint and Prettier April 4, 2020
 
-It is a very simple way of displaying listed names passed through a query string, but takes you through the basic set up. However following VSCode Extensions for Prettier EsLint and Eslint is perhaps a bit simpler.
+Her article is a very simple app which listed names passed through a query string, but takes you through the basic set up. 
+
+This repo explores the implications of adopting Typescript and includes a type safe way of fetching from a remote rest service using JSonDecoder.
 
 
 
