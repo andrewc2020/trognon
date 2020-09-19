@@ -1,0 +1,66 @@
+{
+    "kittens": [
+        {
+            "_id": "5ddd69ae477d40ec12d2e082",
+            "name": "Marmalade",
+            "mother" : 2,
+            "__v": 0
+            
+        },
+        {
+            "_id": "5dffe7e24f0cab5f47bd8d8a",
+            "name": "Griselda",
+            "mother" : 2,
+            "__v": 0
+        },
+        {
+            "_id": "5e0b63a8bbd5c380438ffac2",
+            "name": "Muffikins",
+            "mother": 2,
+            "__v": 0
+        },
+        {
+            "_id": "5e0b63babbd5c380438ffac4",
+            "name": "Dolly",
+            "mother" : 3,
+            "__v": 0
+        },
+        {
+            "_id": "5e0b63c9bbd5c380438ffac6",
+            "name": "Sinbad",
+            "mother" : 3,
+            "__v": 0
+        },
+        {
+            "_id": "5e1231c59abed6a052ba8627",
+            "name": "Parsley",
+            "mother": 1,
+            "__v": 0
+        },
+        {
+            "_id": "5e1231fc9abed6a052ba8629",
+            "name": "Sage",
+            "mother": 1,
+            "__v": 0
+        },
+        {
+            "_id": "5e1232099abed6a052ba862b",
+            "name": "Rosemary",
+            "mother": 1,
+            "__v": 0
+        },
+        {
+            "_id": "5e1232139abed6a052ba862d",
+            "name": "Thyme",
+            "mother": 1,
+            "__v": 0
+        },
+        {
+            "_id": "5e125abb9abed6a052ba862f",
+            "name": "Jerome",
+            "mother": 3,
+            "__v": 0
+        }
+    ],
+    "message": "All the kittens"
+}
