@@ -19,17 +19,20 @@ const Kitten = props => (
     
   </Layout>)
   Kitten.getInitialProps = async function(context){
-    const data = getKitten(context.query.id)
+    //const kitten = getKitten(context.query.id)
+    const data = fetch(`/api/kittens?id=${context.query.id}`)
+   
+    
     
 
     
     
     
-    const show = data[0];
-    const cat = getCat(show.mother)[0]
+    const kitten = data[0];
+    const cat = getCat(kitten.mother)[0]
     
    
-    return {show, cat};
+    return {kitten, cat};
   }
 
 
