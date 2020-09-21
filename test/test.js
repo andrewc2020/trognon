@@ -41,32 +41,14 @@ var chai_1 = require("chai");
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
 require("mocha");
 var superagent = require('superagent');
+before(function () { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/];
+    });
+}); });
 describe('Hello function', function () {
     it('should return hello world', function () {
         var result = hello_1["default"]();
         chai_1.expect(result).to.equal('Hello World!');
     });
-    describe('http requests with superagent', function () {
-        it('should retrieve kittens', function () {
-            (function () { return __awaiter(void 0, void 0, void 0, function () {
-                var res, err_1;
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0:
-                            _a.trys.push([0, 2, , 3]);
-                            return [4 /*yield*/, superagent.get('http://localhost:3000/api/kittens')];
-                        case 1:
-                            res = _a.sent();
-                            console.log(res);
-                            return [3 /*break*/, 3];
-                        case 2:
-                            err_1 = _a.sent();
-                            console.error(err_1);
-                            return [3 /*break*/, 3];
-                        case 3: return [2 /*return*/];
-                    }
-                });
-            }); })();
-        });
-    });
-});
+}); //end of first describe

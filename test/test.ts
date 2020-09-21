@@ -4,10 +4,24 @@ import { expect } from 'chai';
 import 'mocha';
 
 
+
+
+
+
+
 const superagent = require('superagent');
 
 
+before(async()=>{
+  // Configure chai
 
+
+
+
+
+
+  
+})
 
 
 
@@ -18,25 +32,12 @@ describe('Hello function', () => {
     expect(result).to.equal('Hello World!');
   });
 
-  describe('http requests with superagent',()=>{
-    it('should retrieve cats',()=>{
-      
-      (async () => {
-        try {
-          const res = await superagent.get('127.0.0.1:8000/api/kittens');
-          console.log(res);
-        } catch (err) {
-          console.error(err);
-        }
-      })();
 
-    })
-  })
 
   
 
   
-});
+});//end of first describe
     
 
 
