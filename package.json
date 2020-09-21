@@ -12,8 +12,11 @@
   "dependencies": {
     "@babel/register": "7.11.5",
     "@types/assert": "1.5.2",
+    "@types/chai-http": "4.2.0",
     "@types/node": "14.10.2",
     "@types/react": "16.9.49",
+    "@types/superagent": "4.1.10",
+    "chai-http": "4.3.0",
     "cross-env": "7.0.2",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.4",
@@ -24,6 +27,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rxjs": "6.6.3",
+    "superagent": "6.1.0",
     "swr": "0.3.2",
     "ts.data.json": "1.2.0",
     "typescript": "4.0.2"
