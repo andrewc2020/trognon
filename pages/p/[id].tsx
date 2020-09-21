@@ -1,30 +1,34 @@
 import Layout from '../../components/MyLayout'
+import { NextPage, NextPageContext } from 'next';
 import React from 'react'
 import {Kitten} from '../../model/Kitten'
 import {kittenFetcher} from '../../components/kittenFetcher'
 import {KittensDecoder} from '../../model/KittensDecoder'
+import getCat from '../api/_cat'
 
 import useSWR from 'swr';
 
 
-type ComponentProps = {
-  _id: string;
-  // Whatever else is needed
+interface Props {
+  kitten_id?: string;
 }
 
 
-function KittenPage(props: ComponentProps) : JSX.Element {
+const KittenPage : NextPage<Props> =  ({ kitten_id}:Props) : JSX.Element => {
   const { data , error } = useSWR(
-    `/api/kittens`,
+    `/api/kittens?id=${kitten_id}`,
     kittenFetcher
   );
-//   let js = [{"_id":"5f65e9fd109cb480b8268bb4","name":"Gerald","mother":2},{"_id":"5f65ea795fa70c8266c3d37f","name":"Geraldine","mother":2},{"_id":"5f65f2117699fb07febd02af","name":"Marmalade","mother":1}];
 
-//  // let kittens = KittensDecoder.decodePromise<Kitten>(data);
 
-  
-  let kitten = data[0];
-  //let kitten = js[0];
+let kitten : Kitten = {_id : "1", name: "noname", mother:2} 
+if(data && data.length >0){
+    kitten = data[0];
+  };
+
+  const cat = getCat(kitten.mother)[0]
+
+ 
 
    return (
 
@@ -32,27 +36,26 @@ function KittenPage(props: ComponentProps) : JSX.Element {
 
 
    <div>
-     
+     <Layout>
       <h1>{kitten?.name}</h1>
-   <p>id is {props._id}</p>
+      
+      <main>kitten id is : {kitten_id}</main>
+   <p>mother is {cat.name} </p>
+     
+      </Layout>
       </div>
  
 
 
   )
 }
-  KittenPage.getInitialProps = async function(context: any){
+  KittenPage.getInitialProps = async function({query}){
    
+    const kitten_id  = query ? query.id: 1
+    
+  return { kitten_id }
 
     
-    const id = context.query.id
-    
-    
-    // const cat = getCat(show.mother)[0]
-    
-    let thing : ComponentProps = {_id: id}
-   
-    return {thing};
   }
 
 
