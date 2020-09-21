@@ -1,25 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import {kittenService} from '../../_services/kitten-service'
 import { JsonDecoder } from 'ts.data.json';
-type Kitten = {
-  _id: string,
-  name: string,
-  mother : number
-}
-type Kittens = Array<Kitten>;
+import { Kitten } from '../../model/Kitten';
+import { Kittens } from '../../model/Kittens';
 
-const KittenDecoder = JsonDecoder.object<Kitten>({
-  _id: JsonDecoder.string,
-  name : JsonDecoder.string,
-  mother : JsonDecoder.number
-},
-"KittenDecoder"
-)
+import { KittensDecoder } from '../../model/KittensDecoder';
 
-let KittensDecoder = JsonDecoder.array<Kitten>(KittenDecoder, 'KittensDecoder');
-// let my_data = data.kittens.filter(kitten => kitten.mother == req.query.id)
-    
-//     res.status(200).json(my_data)
 
 
 export default  async (req : any, res : any) => {

@@ -1,36 +1,12 @@
 import useSWR from 'swr';
 import Link from 'next/link';
-import { JsonDecoder } from 'ts.data.json';
+import { kittenFetcher } from './kittenFetcher';
 
 
-
-type Kitten = {
-  _id: string,
-  name: string,
-  mother: number
-}
-type Kittens = Array<Kitten>;
-
-const KittenDecoder = JsonDecoder.object<Kitten>({
-  _id: JsonDecoder.string,
-  name : JsonDecoder.string,
-  mother : JsonDecoder.number
-},
-"KittenDecoder"
-)
-
-let KittensDecoder = JsonDecoder.array<Kitten>(KittenDecoder, 'KittensDecoder');
-
-
-async function fetcher(url: string) : Promise<Kittens> {
-
-  let result = await fetch(url).then(r => r.json());
-  return await KittensDecoder.decodePromise<Kitten>(result);
-}
 export default function KittenList(props : any){
     const { data , error } = useSWR(
         `/api/kittens`,
-        fetcher
+        kittenFetcher
       );
       
     return(
