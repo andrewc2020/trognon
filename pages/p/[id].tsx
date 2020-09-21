@@ -14,7 +14,8 @@ interface Props {
 }
 
 
-const KittenPage : NextPage<Props> =  ({ kitten_id}:Props) : JSX.Element => {
+const KittenPage=  ({ kitten_id}:Props) : JSX.Element => {
+
   const { data , error } = useSWR(
     `/api/kittens?id=${kitten_id}`,
     kittenFetcher
@@ -49,7 +50,7 @@ if(data && data.length >0){
 
   )
 }
-  KittenPage.getInitialProps = async function({query}){
+  KittenPage.getInitialProps = async function({query}: any){
    
     const kitten_id  = query ? query.id: 1
     
