@@ -12,16 +12,7 @@ import 'mocha';
 const superagent = require('superagent');
 
 
-before(async()=>{
-  // Configure chai
 
-
-
-
-
-
-  
-})
 
 
 
