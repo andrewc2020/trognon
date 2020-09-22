@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "testold": "mocha -r ts-node/register tests/**/*.js",
-    "test": "cross-env NODE_ENV=test mocha"
+    "test": "cross-env NODE_ENV=test mocha --require init.js"
   },
   "dependencies": {
     "@babel/register": "7.11.5",
@@ -22,6 +22,7 @@
     "enzyme-adapter-react-16": "1.15.4",
     "expect": "26.4.2",
     "history": "5.0.0",
+    "isomorphic-fetch": "2.2.1",
     "localStorage": "1.0.4",
     "next": "9.5.3",
     "react": "16.13.1",
@@ -46,7 +47,9 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "eslint-plugin-react": "7.20.6",
+    "jsdom": "16.4.0",
     "mocha": "8.1.3",
+    "node-fetch": "2.6.1",
     "prettier": "2.1.2",
     "ts-node": "9.0.0"
   }

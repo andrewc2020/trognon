@@ -36,38 +36,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var hello_1 = require("./hello");
-var chai_1 = require("chai");
-// if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
-require("mocha");
-var kitten_service_1 = require("../_services/kitten-service");
 var KittensDecoder_1 = require("../model/KittensDecoder");
-var superagent = require('superagent');
-describe('all tests', function () {
-    describe('Hello function', function () {
-        it('should return hello world', function () {
-            var result = hello_1["default"]();
-            chai_1.expect(result).to.equal('Hello World!');
+function kittenFetcher(url) {
+    return __awaiter(this, void 0, void 0, function () {
+        var result;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, fetch(url).then(function (r) { return r.json(); })];
+                case 1:
+                    result = _a.sent();
+                    return [4 /*yield*/, KittensDecoder_1.KittensDecoder.decodePromise(result)];
+                case 2: return [2 /*return*/, _a.sent()];
+            }
         });
-        describe("decoder tests", function () {
-            var initialEnvVar;
-            // mocking an environment
-            beforeEach(function () {
-                initialEnvVar = process.env.RUL;
-            });
-            afterEach(function () {
-                process.env.RUL = initialEnvVar;
-            });
-            it('should decode a few kittens', function () { return __awaiter(void 0, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, kitten_service_1.kittenService.getAll().then(function (result) { return KittensDecoder_1.KittensDecoder.decodePromise(result.kittens); }).then(function (kittens) { return console.log(kittens); })["catch"]()];
-                        case 1:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
-                });
-            }); });
-        });
-    }); //end of first describe
-}); // end of all describes
+    });
+}
+exports.kittenFetcher = kittenFetcher;
