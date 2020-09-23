@@ -1,4 +1,4 @@
-import {handleResponse} from '../_helpers';
+import {handleResponse} from '~/_helpers';
 export const kittenService = {
     getAll,
     getById
