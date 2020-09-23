@@ -1,6 +1,7 @@
-import hello from './hello';
+
 import { expect } from 'chai';
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
+
 import 'mocha';
 
 import {kittenService} from '../_services/kitten-service'
@@ -25,12 +26,7 @@ const superagent = require('superagent');
 
 
 describe('all tests',()=>{
-  describe('Hello function', () => {
-    it('should return hello world', () => {
-      
-      const result = hello();
-      expect(result).to.equal('Hello World!');
-    });
+  
   
   
   describe("decoder tests",()=>{
@@ -53,11 +49,11 @@ describe('all tests',()=>{
         
       
     })
-  })
+  }); // end of first describe
     
   
     
-  });//end of first describe
+ 
 
 });// end of all describes
 
