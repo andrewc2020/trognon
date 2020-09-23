@@ -5,6 +5,7 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import KittenList  from '../components/KittensList';
+import Layout from '../components/MyLayout'
 
 
 
@@ -15,7 +16,9 @@ const Home : React.FunctionComponent<Props> = ({ name }) =>(
   <div>
     
       <div>
+        <Layout>
       <KittenList />
+      </Layout>
       </div>
       
     

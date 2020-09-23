@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "jsx": "react",
+      "baseUrl": ".", // This must be specified if "paths" is.,
+      "rootDirs": ["model", "components","_services"],
+      "paths": {
+        "jquery": ["node_modules/jquery/dist/jquery"] // This mapping is relative to "baseUrl"
+      }
+    }
+    
+  }

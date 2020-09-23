@@ -5,7 +5,9 @@ Start a Next.js project with Typescript, Eslint and Prettier April 4, 2020
 
 His article is a very simple app which lists names passed through a query string, but takes you through the basic set up. 
 
-This repo explores the implications of adopting Typescript and includes a type safe way of fetching from a remote rest service using JSonDecoder.
+This repo explores the implications of adopting Typescript and includes a type safe way of fetching from a remote rest service using JSonDecoder, TDD using typescript and mocha, enzyme, sinon for stubs and mocking, and deployment using vercel. 
+
+Much learning was gained from Robin Wieruch's blog article https://www.robinwieruch.de/react-testing-mocha-chai-enzyme-sinon
 
 
 

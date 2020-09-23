@@ -1,5 +1,5 @@
 import data from './cats.json'
-import kittens from './kittens.json'
+
 
 function getCat(id){
 
