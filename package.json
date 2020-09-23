@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "testold": "mocha -r ts-node/register tests/**/*.js",
-    "test": "cross-env NODE_ENV=test mocha --require init.js"
+    "test": "cross-env NODE_ENV=test mocha --require init.js --require @babel/register --require ./test/helpers.js --require ./test/dom.js",
+    "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js 'test/**/*.spec.js'",
+    "test:unit:watch": "npm run test:unit -- --watch"
   },
   "dependencies": {
     "@babel/register": "7.11.5",
@@ -16,6 +18,7 @@
     "@types/node": "14.10.2",
     "@types/react": "16.9.49",
     "@types/superagent": "4.1.10",
+    "axios": "0.20.0",
     "chai-http": "4.3.0",
     "cross-env": "7.0.2",
     "enzyme": "3.11.0",
@@ -53,6 +56,7 @@
     "moq.ts": "6.4.0",
     "node-fetch": "2.6.1",
     "prettier": "2.1.2",
+    "sinon": "9.0.3",
     "ts-mocha": "7.0.0",
     "ts-node": "9.0.0"
   }

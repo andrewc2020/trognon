@@ -1,0 +1,76 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+ 
+export const doIncrement = (prevState) => ({
+  counter: prevState.counter + 1,
+});
+ 
+export const doDecrement = (prevState) => ({
+  counter: prevState.counter - 1,
+});
+
+export const Counter = ({ counter }) =>
+  <p>{counter}</p>
+
+class App extends Component {
+    constructor() {
+        super();
+     
+        this.state = {
+          counter: 0,
+          asyncCounters: null
+        };
+     
+        this.onIncrement = this.onIncrement.bind(this);
+        this.onDecrement = this.onDecrement.bind(this);
+      }
+      componentDidMount() {
+        axios.get('http://mypseudodomain/counter')
+          .then(counter => this.setState({ asyncCounters: counter }))
+          .catch(error => console.log(error));
+      }
+      
+      onIncrement() {
+        this.setState((prevState) => ({
+          counter: prevState.counter + 1,
+        }));
+      }
+     
+      onDecrement() {
+        this.setState((prevState) => ({
+          counter: prevState.counter - 1,
+        }));
+      }
+   
+   
+    render() {
+      const { counter } = this.state;
+   
+      return (
+        <div>
+          <h1>My Counter</h1>
+          <Counter counter={counter} />
+   
+          <button
+            type="button"
+            onClick={this.onIncrement}
+          >
+            Increment
+          </button>
+   
+          <button
+            type="button"
+            onClick={this.onDecrement}
+          >
+            Decrement
+          </button>
+        </div>
+      );
+    }
+  }
+  
+  
+   
+  export default App;
+
+  

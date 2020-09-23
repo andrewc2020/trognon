@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import {kittenService} from '../../_services/kitten-service'
-import { JsonDecoder } from 'ts.data.json';
+
 import { Kitten } from '../../model/Kitten';
 import { Kittens } from '../../model/Kittens';
 

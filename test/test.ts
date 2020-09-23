@@ -3,14 +3,16 @@ import { expect } from 'chai';
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
 
 import 'mocha';
-
+//services
 import {kittenService} from '../_services/kitten-service'
-import {kittenFetcher} from '../components/kittenFetcher'
-import { assert } from 'console';
+
 import { KittensDecoder } from '../model/KittensDecoder';
 import { Kittens } from '../model/Kittens';
 import { Kitten } from '../model/Kitten';
 import { Mock } from "moq.ts";
+import useSWR from 'swr';
+import {kittenFetcher} from '../components/kittenFetcher';
+
 
 
 
@@ -33,10 +35,10 @@ describe('all tests',()=>{
     let initialEnvVar :string | undefined
     // mocking an environment
     beforeEach(() => {
-      initialEnvVar = process.env.RUL
+      initialEnvVar = process.env.REST_URL
     })
     afterEach(() => {
-      process.env.RUL = initialEnvVar
+      process.env.REST_URL = initialEnvVar
     })
 
     it('should decode a few kittens', async ()=>{
@@ -49,6 +51,7 @@ describe('all tests',()=>{
         
       
     })
+    
   }); // end of first describe
     
   describe('mock tests',()=>{
@@ -63,10 +66,11 @@ const actual = object([2, 1]);
  
 // since the default comparisons logic sees [2, 1] and [2, 1] as different objects the provided setup would not work
 expect(actual).to.equal(undefined);
-  })
 
-    })
-    
+  })//end of first mock test
+
+    })//end of mock tests 
+  
     
  
 

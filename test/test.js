@@ -39,6 +39,7 @@ exports.__esModule = true;
 var chai_1 = require("chai");
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
 require("mocha");
+//services
 var kitten_service_1 = require("../_services/kitten-service");
 var KittensDecoder_1 = require("../model/KittensDecoder");
 var moq_ts_1 = require("moq.ts");
@@ -48,10 +49,10 @@ describe('all tests', function () {
         var initialEnvVar;
         // mocking an environment
         beforeEach(function () {
-            initialEnvVar = process.env.RUL;
+            initialEnvVar = process.env.REST_URL;
         });
         afterEach(function () {
-            process.env.RUL = initialEnvVar;
+            process.env.REST_URL = initialEnvVar;
         });
         it('should decode a few kittens', function () { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -73,6 +74,6 @@ describe('all tests', function () {
             var actual = object([2, 1]);
             // since the default comparisons logic sees [2, 1] and [2, 1] as different objects the provided setup would not work
             chai_1.expect(actual).to.equal(undefined);
-        });
-    });
+        }); //end of first mock test
+    }); //end of mock tests 
 }); // end of all describes
