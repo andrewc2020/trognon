@@ -10,7 +10,7 @@ import { assert } from 'console';
 import { KittensDecoder } from '../model/KittensDecoder';
 import { Kittens } from '../model/Kittens';
 import { Kitten } from '../model/Kitten';
-
+import { Mock } from "moq.ts";
 
 
 
@@ -51,7 +51,22 @@ describe('all tests',()=>{
     })
   }); // end of first describe
     
-  
+  describe('mock tests',()=>{
+    it('should run a mock test',()=>{
+      const mock = new Mock<(args: number[]) => number>()
+    .setup(instance => instance([2, 1]))
+    .returns(2);
+ 
+const object = mock.object();
+ 
+const actual = object([2, 1]);
+ 
+// since the default comparisons logic sees [2, 1] and [2, 1] as different objects the provided setup would not work
+expect(actual).to.equal(undefined);
+  })
+
+    })
+    
     
  
 

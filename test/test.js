@@ -36,10 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+var chai_1 = require("chai");
 // if you used the '@types/mocha' method to install mocha type definitions, uncomment the following line
 require("mocha");
 var kitten_service_1 = require("../_services/kitten-service");
 var KittensDecoder_1 = require("../model/KittensDecoder");
+var moq_ts_1 = require("moq.ts");
 var superagent = require('superagent');
 describe('all tests', function () {
     describe("decoder tests", function () {
@@ -62,4 +64,15 @@ describe('all tests', function () {
             });
         }); });
     }); // end of first describe
+    describe('mock tests', function () {
+        it('should run a mock test', function () {
+            var mock = new moq_ts_1.Mock()
+                .setup(function (instance) { return instance([2, 1]); })
+                .returns(2);
+            var object = mock.object();
+            var actual = object([2, 1]);
+            // since the default comparisons logic sees [2, 1] and [2, 1] as different objects the provided setup would not work
+            chai_1.expect(actual).to.equal(undefined);
+        });
+    });
 }); // end of all describes
