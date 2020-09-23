@@ -66,8 +66,8 @@ class App extends Component {
           </button>
         </div>
       );
-    }
-  }
+    } //end of render
+  } //end of class
   
   
    

@@ -23,7 +23,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx", "pages/p/[id].tsx", "test/App.spec.js"
+    "**/*.tsx", "pages/p/[id].tsx", "test/App.spec.js", "test/Home.js"
   ],
   "exclude": [
     "node_modules"
