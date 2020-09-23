@@ -1,0 +1,6 @@
+{
+  "env": {
+    "REST_URL": "https://students-ac.herokuapp.com/",
+    "SECRET": "@my-secret-name"
+  }
+}
