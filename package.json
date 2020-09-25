@@ -9,7 +9,8 @@
     "testold": "mocha -r ts-node/register tests/**/*.js",
     "test": "cross-env NODE_ENV=test mocha --require init.js --require @babel/register --require ./test/helpers.js --require ./test/dom.js",
     "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js 'test/**/*.spec.js'",
-    "test:unit:watch": "npm run test:unit -- --watch"
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "testtyped": "tsc --jsx react ./test/*.spec.ts && npm run test:unit" 
   },
   "dependencies": {
     "@babel/register": "7.11.5",

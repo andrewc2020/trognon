@@ -7,8 +7,11 @@ His article is a very simple app which lists names passed through a query string
 
 This repo explores the implications of adopting Typescript and includes a type safe way of fetching from a remote rest service using JSonDecoder, TDD using typescript and mocha, enzyme, sinon for stubs and mocking, and deployment using vercel. 
 
-Much learning was gained from Robin Wieruch's blog article https://www.robinwieruch.de/react-testing-mocha-chai-enzyme-sinon
+Regarding testing, much learning was gained from Robin Wieruch's blog article https://www.robinwieruch.de/react-testing-mocha-chai-enzyme-sinon
 
+Exploring asynchronous testing was also greatly helped by this article https://staxmanade.com/2015/11/testing-asyncronous-code-with-mochajs-and-es7-async-await/
+
+If there are easier ways of getting these key technologies to play together, feel free to fork this repo and initiate a pull request. 
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
